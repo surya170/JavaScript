@@ -14,11 +14,11 @@
 // ``(backtick) operator introduced in Es6.
 // ``(backtick) also called as template literal.
 // ``(backtick) operator used to define the paragraphs.
- 
 
 
-var sub ="FullStack UI";
-var Wish= `Welcome to ${sub}`;
+
+var sub = "FullStack UI";
+var Wish = `Welcome to ${sub}`;
 console.log(Wish); // Welcome to Fullstack UI
 
 
@@ -47,7 +47,7 @@ var hexadecimalNum = 0xABC123;
 var octalNum = 0o123;
 var binaryNum = 0b1010;
 
-console.log(decimalNum,doubleNum,hexadecimalNum,octalNum,binaryNum);  // output : 100 100.12345 11256099 83 10
+console.log(decimalNum, doubleNum, hexadecimalNum, octalNum, binaryNum);  // output : 100 100.12345 11256099 83 10
 
 
 // boolean data type
@@ -97,5 +97,60 @@ console.log(undefined == null);        // true
 console.log(undefined === null);       // false
 
 
+// Array Data Type 
+// collection of indexed and hetrogenous elements called as array.
+// [] 
+// forEach()  (ES6)
+var arr1 = [10, 20, 30, 40, 50];
+var arr2 = [60, 70, 80, 90, 100];
+
+arr1.forEach((element, index) => {
+    console.log(element, arr2[index]);
+});
+
+var frontEnd_Subjects = [`Angular`, `React Js`, `VueJs`];
+var backEnd_Subjects = [`Nodejs`, `Deno`, `SpringBoot`];
+frontEnd_Subjects.forEach((element, index) => {
+    console.log(element, backEnd_Subjects[index]);
+});
+
+
+// JSON Data Type 
+
+// JSON : JavaScript object Notation.
+// JSON is used to transfer the data over the network
+// JSON is light weight
+// JSON is Eazy To parse
+// Objects ---> {}  arrays ----> []  data ----> key&value pairs , KeyValue separated by using ":" pairs seperated by using ","
+
+var obj = {
+    sub_one: `React JS`,
+    sub_two: `Node js`,
+    sub_three: `MongoDB`,
+};
+console.log(obj.sub_one,obj.sub_two,obj.sub_three);
+
+for(var i=0;i<5;i++) 
+{
+   
+};
+console.log(i);    // var:5   // let : ReferenceError : i is not defined  (ES6)
+// var keyword breaks the scope rule
+// let keyword obeys the scope rule
+
+
+//global variable
+var data  = 100;
+console.log(data);  // 100
+//block
+{
+    //local variable
+    var data = 200;
+    console.log(data);  // 200
+}
+console.log(data);   //200  because of the bug in the keyword we are getting 200 so to overcome these bugs go for let
+//  is global member effected by local number,called as global polluting issue
+// global polluting issue raised because of var keyword
+// We can overcome global polluting issue by using let keyword.
 
 
