@@ -130,6 +130,11 @@ var obj = {
 };
 console.log(obj.sub_one,obj.sub_two,obj.sub_three);
 
+
+
+
+// Bugs in Var Keyword
+
 for(var i=0;i<5;i++) 
 {
    
@@ -154,3 +159,56 @@ console.log(data);   //200  because of the bug in the keyword we are getting 200
 // We can overcome global polluting issue by using let keyword.
 
 
+
+var data = 100;
+var data = 200;
+console.log(data);  //200  // we are Excepting error but we got 200.
+
+/*
+let data = 100;
+let data = 200;
+console.log(data);  //error
+*/
+
+// var keyword allows the duplicate vaiables
+// let keyword do not allows the duplicate variables.
+
+ // Process Of variable :
+
+// declaration and intialization
+// Access The variable
+
+var data = 100;
+console.log(data);  // 100
+
+console.log(data1); //var :  undefinede // let: Error
+var data1 = 200;
+
+// accessing the variables with undefiend value,before it's declaration and initilization called as variable hoisting
+// var keyword allows the variable hoisting
+// we can overcome variable hoisting by using "let" keyword
+
+
+for(var i=0;i<6;i++) {
+    setTimeout(()=>{
+        console.log(i);
+    },8000);
+};
+
+// var : 6 6 6 6 6 6
+// let : 0 1 2 3 4 5
+
+
+/*************************************************************************************************
+                      var                                             let
+     var keyword introduced in ES1                          let keyword introduced in ES6
+     duplicate variables allows                             won't allow the duplicate variables
+     global polluting issues raised                         we can oveercome gllobal global polluting issue
+     variable hoidiint issue raised                         we can overcome variable hoisting issue
+     scope rule break by the var keyword                    scope rule obey by the let keyword
+**************************************************************************************************/
+
+
+// const
+// we can't modify the data (const)
+// it is also introduced in ES6
