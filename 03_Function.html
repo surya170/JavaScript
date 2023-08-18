@@ -1,0 +1,84 @@
+<!--
+    Functions:
+    ------------
+    - particular business logic is called Function.
+    - Functions are not t reuse the business logic.
+    - we have following types of functions  upto ES11.
+         1) Named Functions 
+         2) Anonymous Functions / Arrow Functions / Fat-Arrow Functions / CallBack Functions
+         3) Rest Parameters Functions 
+         4) Optional Parameters Functions
+         5) Default Parameters Functions 
+         6) IIFE (Immediate Invokable Functional Expression)
+         7) Generators
+         8) Constructor Functions
+
+-->
+
+<!--
+    Named Function:
+    ------------------
+    - The Function with the name is called Named Function.
+     Syntax: 
+        Function Defination:
+        ----------------------
+          function funtionname(parameters)  {
+             // business logic
+          };
+          
+        // Call the Function
+
+        functionname(parameters)
+-->
+<script>
+     function fun_one() {
+       return "Welcome To Named Function";
+     };
+     console.log(fun_one); // if we forgetting the paranthesis we get the out as entire function defination as output
+     console.log(fun_one()); // Welcome to Named Function.
+
+</script>
+
+<script>
+    function fun_one(arg1,arg2,arg3) {
+        return `${arg1} <==> ${arg2} <==> ${arg3}`;
+    };
+    console.log(fun_one(10,20,30)); // 10 <==> 20 <==> 30
+    console.log(fun_one(null,null,null)); // null <==> null <==> null
+</script>
+
+<script>
+    function fun_one() {
+         return fun_two;
+    };
+    function fun_two(){
+      return "hello";
+    };
+    console.log(fun_one); // fun_one defination we will get as output.
+    console.log(fun_one()); // output we get is fun_two() defination
+    console.log(fun_one()()); // output we get is hello.
+</script>
+
+<script>
+    let arr = [];
+    function fun_one() {
+       return "hello";
+    };
+    for(var i=0;i<5;i++) {
+        arr.push(fun_one);
+    }
+    console.log(arr.length);
+    console.log(arr[0]());
+</script>
+<script>
+    let arr1 = [];
+    function fun_one(){
+        return "hello";
+    };
+    for(var i=0;i<5;i++) {
+        arr1.push( fun_one );
+    };
+    arr1.forEach((element,index)=>{
+           console.log(element());
+    });
+</script>
