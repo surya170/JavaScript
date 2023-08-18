@@ -175,4 +175,74 @@ console.log(data); // 200  Actually we are Excepting answer is 100 but we are ge
 // we can overcome global polluting issue by using let keyword.
 // 
 
+var data = 100;
+var data = 200;
+console.log(data);   // As a developer we are expecting  Error  but we are getting 200.
+
+// To overcome the bug we are going for let keword
+
+/*
+let data = 100;
+let data = 200;
+console.log(data);   // We are getting error : SyntaxError: Identifier 'data' has already been declared
+
+// var keyword allows the duplicate variables
+// let keyword  won't allows the duplicate variables.
+*/
+
+// declarations and initilization
+// access the variable 
+
+console.log(data1); //  undefined as answer
+var data1 = 120; // declaration & Initialization
+//console.log(data1); // 120
+
+// declaring the variable with undefined value,before its declaration and initialization called variable hoisting.
+// var keyword allows the variable hositing
+// we can overcome variable hoisting by using "let" keyword.
+
+
+for(var i=0;i<5;i++) {
+    setTimeout(() => {
+       console.log(i);
+    },8000);
+}
+// output : 5 5 5 5 5
+
+for(let i=0;i<5;i++) {
+    setTimeout(() => {
+       console.log(i);
+    },8000);
+}
+// output : 0 1 2 3 4
+
+/**************************************************************************************************************** */
+ /* 
+                        var                                             let 
+  var keyword introduced in ES6.                           let Keyword introduced in ES6.
+  duplicate variable allowed                               duplcates are not allowed
+  global polluting issue raised                            We can overcome global polluting issue.
+  variable hoisiting issue raised                          we can overcome variable hoisting issue
+  Scope rule break by var keyword.                         Scope rule obey by let keyword
+
+ */
+/**************************************************************************************************************** */
+
+
+// const 
+// We can't modify the data (const);
+// It is also introduced in Es6.
+
+const data2 = 100;
+// data2 = 300;  // TypeError: Assignment to constant variable.
+console.log(data2);
+
+const obj1 = {wish:"ReactJS"};
+console.log(obj1);  // { wish: 'ReactJS' }
+ // obj1={}; // TypeError: Assignment to constant variable.
+obj1.wish = "Welcome To ES11";
+console.log(obj1); // { wish: 'Welcome To ES11' }
+
+
+
 
