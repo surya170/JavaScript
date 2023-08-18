@@ -1,0 +1,110 @@
+1) Introduction to JavaScript
+     - Scripting language.
+     - netscape.
+     - ES11.
+     - Angular,react,node,vue.........
+2) Variables
+       - variables are used to store the data.
+           Ex: String,number,boolean,arrays,objects
+       - var,let or const are used to declared the variable.
+       - let & const are introduced in ES6.
+3)  DataTypes
+        Ex:string,number,boolean,undefined,null,Symbol,objects,bigInt,object(Custom DataType)
+4)  functions [ ES11] 
+      - functions are used to define the business logic.
+      - functions are used to reuse the business logic.
+         Types of functions upto ES11.
+           - Named functions.
+           - Anonymous Functions / Arrow function / Fat Arrow function / callback functions.(ES6)
+           - Rest Parameters in functions.
+           - Default Parameter in functions.
+           - optional parameters in functions.
+           - IIFE (Immediate invokable Functional Expressions).(or) Self Calling Functions.
+           - Generators.
+           - Constructor functions.
+5) Prototype in JavaScript
+      - Prototype Chaining.
+6) Promises  : Promises are used to maked the asynchronus calls.
+     - async & await keywords are come in Prommises topic.
+7) JSON 
+      - Java Script object notation
+      - transfer the data over the network.
+      - JavaScript objects
+      - {} represents the objects
+      - [] represents the arrays
+      - key and value represents the data.
+      - json server
+      - Ajax calls (Jquery)
+8) arrays Manipulations.
+       50+ functions
+       map(),filter(),reduce() reduceRight()......all 50+ functions are availiable.
+9) callback in JavaScript
+     - callback Hell
+10) Closures in JavaScript
+11) Debouncing & Throttling
+    - consider the last request 
+12) Regular Expressions.
+13) Debugging in JavaScript.
+14) Event bubling & Event Capturing.
+15) call(),apply() and bind(). 
+
+
+Introduction:
+--------------
+ - JavaScript is the Scripting language.
+ - JavaScript released by netscape.
+ - current version of JavaScript is ES11 (ES2020).
+ - Es Stands for ECMA Script.
+ - we will execute JavaScript with the help of "browsers" or "node" tool.
+ - node tool is present in Nodejs.
+ - Ex: 
+       Google chrome,Mozilla,opera,netscape Navigator etc......
+ - Interpreter presenting inn browser engine helps to execute the JavaScript line by line.
+ - By Default JavaScript is the synchronous
+ - we will save JavaScript files with ".js" Extension.
+ - Recommended IDE to develop JavaScript is visualstudiocode
+ - Vscode given by microsoft and open Source.
+ - 
+
+ -------------------inheritance
+ -------------------Polymorphism
+ -------------------Encapsulation
+            ------- js does not follow the features because its not oops language.
+            -------js is object based Scripting language.
+- JavaScript is the Object based scripting language.
+- Vendor provides so many predefined objects like window,document,console,date,time.......
+
+SOFTWARES:
+----------
+1) dowmload and install Nodejs
+  "node" is the tool present in nodejs helps to execute the JavaScript.
+ website: https://nodejs.org/en/download/
+ file : node-v14.15.2-x64.msi 
+     - msi stands for microsft installer
+2) download and install visualstudiocode
+     website: http://code.vvisualstudio.com/download 
+     file : VSCodeUserSetup-x64-1.52.0.execute
+
+
+
+Github:
+=======
+1. Go For Github and create Repository 
+2.Go To VScode Editor
+             D:\PROGRAMS\UI\JavaScript\js>npx gitignore node
+  =>  gitignore is used to stop push of libraries to repositories.
+3.Initalize the git Repository
+    D:\PROGRAMS\UI\JavaScript\js>git init
+4.Next Step Add mail to Repository    
+  D:\PROGRAMS\UI\JavaScript\js>git config user.email "suryanarayana13271@gmail.com"
+5. How To Add Files
+  D:\PROGRAMS\UI\JavaScript\js>git add .
+6. How To commit to the repositories
+  D:\PROGRAMS\UI\JavaScript\js>git commit -m "variables discussion".
+7. How To add origin.
+  D:\PROGRAMS\UI\JavaScript\js>git remote add origin https://github.com/surya170/JavaScript.git
+8. push to origin
+  D:\PROGRAMS\UI\JavaScript\js>git push -u origin master 
+
+
+    
