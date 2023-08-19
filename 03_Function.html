@@ -82,3 +82,522 @@
            console.log(element());
     });
 </script>
+
+<!--
+    Anonymous Functions:
+    ---------------------
+    - Anonymous Function without name as Anonymous Function.
+    - Anonymous functions are also called as Arrow Function / Fast Arrow Function / Lambda Function / CallBack Function.
+    - How to represent the anonymous function.
+    - we will represent anonymous function with the help of "=>"
+    - Anonymous Functions are secured functions compared to other function
+    - Anonymous Functions are introduced in ES6.
+    Syntax: 
+        var/let/const variablename = () => {
+            //businees logic
+        };
+
+        // To call Anonymous Function (or) Function calling. 
+        variablename();
+-->
+
+<script>
+     let fun_one1 = () => {
+        return "Welcome To Arrow Function";
+     };
+     console.log(fun_one1 ); 
+     /*
+      output : 
+      () => {
+        return "Welcome To Arrow Function";
+     }
+     */
+    console.log(fun_one1()); // Welcome To Arrow Function
+
+</script>
+
+<script>
+    let fun_one2 = (arg1,arg2,arg3) => {
+        return `${arg1}<==>${arg2}<==>${arg3}`;
+    };
+    console.log(fun_one2()); // undefined<==>undefined<==>undefined
+    console.log(fun_one2(null,null,null)); //null<==>null<==>null
+    console.log(fun_one2("Angular","ReactJS","MongoDB")); // Angular<==>ReactJS<==>MongoDB
+
+</script>
+
+<script>
+    let fun_one3 = () => {
+       return () => {
+            return "Hello";
+       };
+    };
+    console.log( fun_one3);
+    /* output:
+     () => {
+       return () => {
+            return "Hello";
+       };
+    }
+    */
+    console.log(fun_one3());
+    /* output:
+    () => {
+            return "Hello";
+       }
+    */
+
+</script>
+
+<script>
+    let arr2 = [];
+
+    for(let i=0;i<5;i++) {
+       arr2.push( () => { return "Hello" });
+    };
+    console.log(arr2.length);
+    arr2.forEach((element,index) => {
+        console.log(element())
+    });
+</script>
+
+<script>
+
+</script>
+
+<!--
+    RestParamter In Functions 
+    ===========================
+    - If we want to store more than one value at that time we go for restparameter Functions.
+    - we will represent rest parameter  with the help of "..."
+    - "..." operator called as spread operator.
+    - "..." operator are also introduced in ES6.
+    - 
+
+-->
+
+<script>
+    function fun_one4(...arg1) {
+       console.log(arg1);
+    };
+    fun_one4(10,20,30,40,50); //  [10, 20, 30, 40, 50]
+    fun_one4("Angular","NodeJS","MongoDB"); //  ['Angular', 'NodeJS', 'MongoDB']
+    fun_one4();// [] 
+    fun_one4(undefined,undefined,undefined); //  [undefined, undefined, undefined]
+    fun_one4(null,null,null); // (null,null,null)
+
+</script>
+
+<script>
+
+    function fun_one5(...arg1) {
+        
+    }
+</script>
+
+<!--
+    Function will allow only one restparam in param.
+    and rest param should be last param in the param list.
+-->
+
+<script>
+    function fun_one6(arg1,...arg2) {
+     
+    };
+</script>
+
+<!--
+
+-->
+<script>
+     function fun_one5(arg1,...arg2) {
+       console.log(arg1,arg2);
+     };
+     fun_one5("Hello !!!"); // Hello !!! []
+     fun_one5(); // undefined [] 
+     fun_one5("Hello_1","Hello_2");  // Hello_1 ,Hello_2
+     fun_one5("Hello_1","Hello_2","hello3");  // Hello_1 ,Hello_2,hello3
+     fun_one5(undefined,undefined); // undefined, [undefined]
+     fun_one5(null,null); // null [null]
+
+</script>
+
+<!--
+    Default Paramters in Function 
+    -------------------------------
+    - While Defining the functions, we will assign parameters with default values.
+    - This concept also introduced in ES6.
+    - We can have more than one value of Deafault Parameter.
+-->
+<script>
+    function fun_one6(arg1="ReactJS",arg2="Nodejs",arg3="MongoDB") {
+        console.log(arg1,arg2,arg3); // ReactJS Nodejs MongoDB
+    }; 
+    fun_one6();
+    fun_one6("AngularJS") //AngularJS Nodejs MongoDB
+    fun_one6(undefined,undefined,undefined); //ReactJS Nodejs MongoDB
+    fun_one6(null,null,null) // null null null
+    fun_one6(undefined,undefined,"Deno"); // ReactJS Nodejs Deno
+     
+</script>
+
+<script>
+    function fun_one7(arg1,arg2=[],arg3={}) {
+        console.log(arg1,arg2,arg3); 
+    };
+    fun_one7(); // undefined [] {}
+    fun_one7("Hello_1"); // Hello_1 [] {}
+    fun_one7("Hello_1",["Hello_2"],{key1:"Hello_3"}); // Hello_1 ["Hello_2"]  {key1:"Hello_3"}
+    fun_one7(undefined,undefined,undefined); // undefined [] {}  Note: orignal values not effected by undefiend.
+    fun_one7(null,null,null);   // null null null  // Note: Original value will be efffected 
+</script>
+
+<script>
+    function fun_one8(arg1,arg2="hello_2",...arg3){
+          console.log(arg1,arg2,arg3);
+    };
+    fun_one8();  // undefined "hello" []
+    fun_one8("Hello_1"); // Hello_1 hello_2 []
+    fun_one8("Hello_1",undefined,"Hello_3"); // Hello_1 Hello_2 ["Hello_3"] 
+    fun_one8(null,null,null); // null null null.
+</script>
+
+<!--
+    IIFE (Immediate invokable Functional Expressions).(or) Self Calling Functions.
+    ==================================================================================
+    - Immediate Invokable Function Expression.
+    - IIFE introduced in ES6.
+    - IIFE function also called as Self Invokable Functions.
+    - Syntax: 
+      ((arg1,arg2,arg3,......)=>{
+
+      })(param1,param2,param3,.....);
+
+-->
+
+<script>
+    (()=>{
+      console.log("Welcome To IIFE")
+    })(); // Welcome To IIFE.
+</script>
+
+<script>
+    ((arg1,arg2,arg3) => {
+           console.log(arg1,arg2,arg3);
+    })("Angualar","Nodejs","MongoDB");  // Angular Nodejs MongoDB
+</script>
+
+<script>
+    let res = ((arg1,arg2,arg3) => {
+       return `${arg1}<==>${arg2}<==>${arg3}`;
+    })("ReactJS","Nodejs","MongoDB");
+    console.log(res); // ReactJS Nodejs MongoDB.
+</script>
+
+<script>
+    for(var i=0;i<5;i++){
+        setTimeout(() => {
+           console.log(i);
+        },5000);
+    };  // EXpected Answer : 0 1 2 3 4 (after 5 sec they printed)
+        // Output : 5 5 5 5 5 
+</script>
+
+<!--
+  Other soultion is let keyword and other one is IIFE Function.
+--> 
+<script>
+    for(var i=0;i<5;i++){
+       ((i) => {
+        setTimeout(() => {
+           console.log(i);   // 0 1 2 3 4
+        },5000);
+     })(i);
+    };
+</script>
+
+<!--
+    Constrcutor Functions 
+    ======================
+    - We will create class like strctures by using "Constructor Functions".
+    - In Constructor Functions all the members ( variable and Function) starts with "this" keyword.
+    - we will create object to the constructor function by using "new" keyword.
+
+-->
+
+<script>
+    function class_one(){
+        this.sub_one = "Angular11";
+        this.sub_two = "Nodejs";
+        this.sub_three = "MongoDB";
+    };
+    let obj = new class_one();
+    console.log(obj.sub_one,obj.sub_two,obj.sub_three);
+</script>
+
+<script>
+    function class_one1(arg1,arg2,arg3){
+        this.sub_one = arg1;
+        this.sub_two = arg2;
+        this.sub_three = arg3;
+        
+    };
+    let obj1 = new class_one1("Angular","NodeJS","MongoDB");
+    console.log(obj1.sub_one,obj1.sub_two,obj1.sub_three);
+
+    const obj2 = new class_one1("ReactJS","Deno","CasandraDB");
+    console.log(obj2.sub_one,obj2.sub_two,obj2.sub_three);
+
+    const obj3 = new class_one1("VueJS","Nodejs","MongoDB");
+    console.log(obj3.sub_one,obj3.sub_two,obj3.sub_three); //VueJS Nodejs MongoDB
+
+</script>
+
+<script>
+    function class_one2(){
+        this.getSubjectOne = function(){
+             return "ReactJs";
+        };
+        this.getSubtwo = function(){
+             return "NodeJS";
+        };
+        this.getSubjectThree = function(){
+              return "MongoDB";
+        };
+    };
+    let obj4 = new class_one2();
+    console.log(obj4.getSubjectOne,obj4.getSubtwo,obj4.getSubjectThree); // ReactJS NodeJS MonogDB.
+</script>
+
+<!--
+    - Aquiring the properties from parent class to child class called as "prototype".
+    
+-->
+
+<script>
+      function class_one3(){
+          //this.var_one = "Hello_1";
+      };
+      class_one3.prototype.var_one = "Hello";
+
+      function class_one4() {
+
+      };
+      class_one4.prototype = Object.create(class_one3.prototype);
+      class_one4.prototype.var_two  = "Hello_3";
+
+      let obj5 = new class_one4();
+      console.log(obj5.var_one,obj5.var_two); // Hello Hello_3
+</script>
+
+<script>
+    function class_one9() {
+
+    };
+     
+</script>
+
+<script>
+    function class_one10(){
+       
+    };
+    // to Add one variable dynamically and one function dynamically 
+    class_one10.prototype.var_one = "Hello_1";
+    class_one10.prototype.fun_one =  function(){
+        return "Hello_2";
+    };
+    function class_two(){
+        
+    };
+    class_two.prototype = Object.create(class_one10.prototype);
+    class_two.prototype.var_two = "Hello_3";
+    class_two.prototype.fun_two = function(){
+        return "Hello_4";
+    };
+
+    let obj11  = new class_two();
+    console.log(obj11.var_one,obj11.var_two,obj11.fun_one(),obj11.fun_two());// Hello_1 Hello_2 Hello_3 Hello_4
+</script>
+
+<!--
+    Prototype Chaining Example 
+-->
+<script>
+    function ParentF(){
+      
+    };
+    ParentF.prototype.mean = function() {
+        return "MEAN STACK";
+    }
+     
+    function ChildF(){
+    };
+    ChildF.prototype = Object.create(ParentF.prototype);
+    ChildF.prototype.mern = function(){
+        return "MERN STACK.....";
+    }
+    function SubChildF(){
+
+    };
+    SubChildF.prototype = Object.create(ChildF.prototype);
+    SubChildF.prototype.mevn = function(){
+        return "MEVN STACK......";
+    };
+    let obj12 = new SubChildF();
+    console.log( obj12.mern(),obj12.mevn());  // MERN STACK..... MEVN STACK......
+
+</script>
+
+<!--
+ Overrdiing : Overrding  Parent class Fucntionality with Child Class Functionality techincally we called
+ as Prototype Overriding.
+
+-->
+<script>
+    function Parent() {
+
+    };
+    Parent.prototype.dbFun = function(){
+       return "Data From OracleDB Soon...";
+    };
+
+    function Child() {
+
+    };
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.dbFun = function() {
+        return "Data From MongoDB Soon...";
+    };
+    let obj13 = new Child();
+    console.log(obj13.dbFun()); // Data From MongoDB Soon...
+</script>
+
+<!--
+    Function Overloading
+    same Function wit different arguments called as function overloading.
+-->
+<script>
+    function class_one() {
+       
+    };
+    class_one.prototype.add = function(arg1,arg2){
+       return arg1*arg2;
+    };
+    class_one.prototype.add = function(arg1,arg2,arg3){
+       return arg1*arg2*arg3;
+    };
+    class_one.prototype.add = function(arg1,arg2,arg3,arg4){
+       return arg1*arg2*arg3*arg4; 
+    };
+    let obj15 = new class_one();
+    console.log(obj15.add(10,10));   // NAN
+    console.log(obj15.add(10,10,10)); // NAN
+    console.log(obj15.add(10,10,10,10)); //10000
+
+</script>
+
+<!--
+    Generator Functions 
+    =====================
+    - If we want to do control the flow of execution inside the function call at that time we go for 
+      Generator Functions.
+    - function fun_one() {
+        -----
+        -----
+        -----
+        -----
+    }
+    - I want to execute the only line number 1 only then go Generator Function.
+    - Generator Function will prefix with  "*".
+    - inside Generator Functions, each statement will prefix with "yield".
+
+-->
+<script>
+     function *fun_one(){
+         yield "Hello_1";
+         yield "Hello_2";
+         yield "Hello_3";
+         yield "Hello_4";
+         yield "Hello_5";
+     };
+    let cursor = fun_one();
+    console.log(cursor.next()); // {value: 'Hello_1', done: false} false here means is behind me some one is there.
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+    
+    console.log(cursor.next()); // {value: undefined, done: true}
+    
+</script>
+
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+    }
+    function *fun_two(){
+        yield "Hello_2";
+    }
+    function *fun_three(){
+        yield "Hello_3";
+    }
+    function *my_fun(){
+        yield *fun_two();
+        yield *fun_three();
+        yield *fun_one();
+    }
+    let cursor1 = my_fun();
+    console.log(cursor1.next());
+    console.log(cursor1.next());
+    console.log(cursor1.next());
+    console.log(cursor1.next());
+    
+    /*
+    {value: 'Hello_2', done: false}
+    {value: 'Hello_3', done: false}
+    {value: 'Hello_1', done: false}
+    {value: undefined, done: true}
+    */
+</script>
+
+<script>
+    function *fun_one() {
+        yield 100;
+        yield 200;
+        yield 300;
+        return "Hello";  
+        yield 400;
+    };
+    let cursor2 = fun_one();
+    console.log(cursor2.next());
+    console.log(cursor2.next());
+    console.log(cursor2.next());
+    console.log(cursor2.next());
+    console.log(cursor2.next());
+
+    /*
+      {value: 100, done: false}
+03_Function.html:573 {value: 200, done: false}
+03_Function.html:574 {value: 300, done: false}
+03_Function.html:575 {value: 'Hello', done: true}
+03_Function.html:576 {value: undefined, done: true}
+    */
+    
+</script>
+
+<!--
+    Optional Parameter 
+    ====================
+- While Calling the function For paramters are optional.
+- Optional Parameter are introduced in ES6.
+- We will represent Optional Parameter by using "?".
+- The default value of optional parameter is undefined.
+- Optional Parameters will works in "typescript" Environment.
+- we will save typescript file with ".ts" extension.
+- Conversion of Typescript to equvalent to JavaScript is called as "Transpilation".
+- "tsc" is the tool is used to perform the "Transpilation".
+- "tsc" standards for Typescript Compiler.
+- We Will install Typescript By Follwing command.
+  > npm install -g typescript 
+ 
+-->

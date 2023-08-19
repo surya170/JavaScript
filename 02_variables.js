@@ -75,14 +75,14 @@ console.log(my_data);
 
 //undefined Data Type & Null Data Type 
 // Psychologicall Example for these Data type is
-// For Example You hav eMobile Phone With you but it is not working because of other reaasons so it is undefined
+// For Example You have Mobile Phone With you but it is not working because of other reasons so it is undefined
 // For My self i dont have mobile phone is null
 // object is there but not working is undefined
 // object itself is not there is null.
 
 
 
-// ==  (value) & === ( Value and DataType)
+// ==  (Comapre only value) & === ( Compare both Value and DataType)
 
 console.log(10 == "10");  // true
 console.log(10 == "ten"); //false
@@ -204,7 +204,7 @@ for(var i=0;i<6;i++) {
      var keyword introduced in ES1                          let keyword introduced in ES6
      duplicate variables allows                             won't allow the duplicate variables
      global polluting issues raised                         we can oveercome gllobal global polluting issue
-     variable hoidiint issue raised                         we can overcome variable hoisting issue
+     variable hosting issue raised                          we can overcome variable hoisting issue
      scope rule break by the var keyword                    scope rule obey by the let keyword
 **************************************************************************************************/
 
